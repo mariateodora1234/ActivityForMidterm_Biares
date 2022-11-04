@@ -19,7 +19,6 @@
             
         </fieldset>
 
-
         <fieldset  style="width: 500px;">
             <legend>Options:</legend>
             <!---------Selection Size-------->
@@ -46,7 +45,6 @@
         }
     }
 
-     
     if(isset($_GET['btnCheckout']) && isset($_GET['chkBeverage']) && isset($_GET['drpSize']) && isset($_GET['quantity'])){
 
         echo '<hr>';
@@ -61,129 +59,189 @@
                 
                 //Computation for Regular Size
                 if ($SizeValue == "Regular"){
-                    if($valueBeverage == "Coke" && $quantity > 1 || $valueBeverage == "Coke" && $quantity==1){
+
+                    //Pieces
+                    if($valueBeverage == "Coke" && $quantity > 1){
                         $coke = 15 * $quantity;
                         $qtyCoke = $quantity;
                         echo '<li> ',$quantity,' ','pieces of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$coke,'</li> <br>';
                     }
-                    
-                    elseif($valueBeverage == "Sprite" && $quantity > 1 || $valueBeverage == "Sprite" && $quantity==1){
+                    elseif($valueBeverage == "Sprite" && $quantity > 1){
                         $sprite = 20* $quantity;
                         $qtySprite = $quantity;
                         echo '<li> ',$quantity,' ','pieces of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$sprite,'</li> <br>';
                     }
-
-                    elseif($valueBeverage == "Royal" && $quantity > 1 || $valueBeverage == "Royal" && $quantity==1){
+                    elseif($valueBeverage == "Royal" && $quantity > 1){
                         $royal = 20* $quantity;
                         $qtyRoyal = $quantity;
                         echo '<li> ',$quantity,' ','pieces of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$royal,'</li> <br>';
                     }
-                     
-                    elseif($valueBeverage == "Pepsi" && $quantity > 1 || $valueBeverage == "Pepsi" && $quantity==1){
+                    elseif($valueBeverage == "Pepsi" && $quantity > 1 ){
                         $pepsi = 15 * $quantity;
                         $qtyPepsi = $quantity;
                         echo '<li> ',$quantity,' ','pieces of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$pepsi,'</li> <br>';
                     }
-                   
-                    elseif($valueBeverage == "MountainDew" && $quantity > 1 || $valueBeverage == "MountainDew" && $quantity==1){
+                    elseif($valueBeverage == "MountainDew" && $quantity > 1 ){
                         $mountaindew = 20 * $quantity;
                         $qtyMountaindew = $quantity;
                         echo '<li> ',$quantity,' ','pieces of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$mountaindew,'</li> <br>';
                     } 
 
-                    
+                    //Piece
+                    elseif($valueBeverage == "Coke" && $quantity==1){
+                        $coke = 15 * $quantity;
+                        $qtyCoke = $quantity;
+                        echo '<li> ',$quantity,' ','piece of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$coke,'</li> <br>';
+                    }
+                    elseif($valueBeverage == "Sprite" && $quantity==1){
+                        $sprite = 20* $quantity;
+                        $qtySprite = $quantity;
+                        echo '<li> ',$quantity,' ','piece of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$sprite,'</li> <br>';
+                    }
+                    elseif($valueBeverage == "Royal" && $quantity==1){
+                        $royal = 20* $quantity;
+                        $qtyRoyal = $quantity;
+                        echo '<li> ',$quantity,' ','piece of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$royal,'</li> <br>';
+                    }
+                    elseif($valueBeverage == "Pepsi" && $quantity==1){
+                        $pepsi = 15 * $quantity;
+                        $qtyPepsi = $quantity;
+                        echo '<li> ',$quantity,' ','piece of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$pepsi,'</li> <br>';
+                    }
+                    elseif($valueBeverage == "MountainDew" && $quantity==1){
+                        $mountaindew = 20 * $quantity;
+                        $qtyMountaindew = $quantity;
+                        echo '<li> ',$quantity,' ','piece of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$mountaindew,'</li> <br>';
+                    }     
                 }
 
                 //Computation for Up-Size
                 elseif ($SizeValue == "Up-Size"){
-                    if($valueBeverage == "Coke" && $quantity > 1 || $valueBeverage == "Coke" && $quantity==1){
+
+                    //Pieces 
+                    if($valueBeverage == "Coke" && $quantity > 1){
                         $coke = 15 * $quantity + 5 * $quantity;
                         $qtyCoke = $quantity;
                         echo '<li> ',$quantity,' ','pieces of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$coke,'</li> <br>';
                     }
-                    
-                    elseif($valueBeverage == "Sprite" && $quantity > 1 || $valueBeverage == "Sprite" && $quantity==1){
+                    elseif($valueBeverage == "Sprite" && $quantity > 1){
                         $sprite = 20 * $quantity + 5 * $quantity;
                         $qtySprite = $quantity;
                         echo '<li> ',$quantity,' ','pieces of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$sprite,'</li> <br>';
                     }
-
-                    elseif($valueBeverage == "Royal" && $quantity > 1 || $valueBeverage == "Royal" && $quantity==1){
+                    elseif($valueBeverage == "Royal" && $quantity > 1){
                         $royal = 20 * $quantity + 5 * $quantity;
                         $qtyRoyal = $quantity;
                         echo '<li> ',$quantity,' ','pieces of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$royal,'</li> <br>';
                     }
-                     
-                    elseif($valueBeverage == "Pepsi" && $quantity > 1 || $valueBeverage == "Pepsi" && $quantity==1){
+                    elseif($valueBeverage == "Pepsi" && $quantity > 1){
                         $pepsi = 15 * $quantity + 5 * $quantity;
                         $qtyPepsi = $quantity;
                         echo '<li> ',$quantity,' ','pieces of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$pepsi,'</li> <br>';
                     }
-                   
-                    elseif($valueBeverage == "MountainDew" && $quantity > 1 || $valueBeverage == "MountainDew" && $quantity==1){
+                    elseif($valueBeverage == "MountainDew" && $quantity > 1){
                         $mountaindew = 20 * $quantity + 5 * $quantity;
                         $qtyMountaindew = $quantity;
                         echo '<li> ',$quantity,' ','pieces of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$mountaindew,'</li> <br>';
-                    }     
+                    }  
                     
-
+                    //Piece 
+                    elseif($valueBeverage == "Coke" && $quantity==1){
+                        $coke = 15 * $quantity + 5 * $quantity;
+                        $qtyCoke = $quantity;
+                        echo '<li> ',$quantity,' ','piece of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$coke,'</li> <br>';
+                    }
+                    elseif($valueBeverage == "Sprite" && $quantity==1){
+                        $sprite = 20 * $quantity + 5 * $quantity;
+                        $qtySprite = $quantity;
+                        echo '<li> ',$quantity,' ','piece of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$sprite,'</li> <br>';
+                    }
+                    elseif($valueBeverage == "Royal" && $quantity==1){
+                        $royal = 20 * $quantity + 5 * $quantity;
+                        $qtyRoyal = $quantity;
+                        echo '<li> ',$quantity,' ','piece of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$royal,'</li> <br>';
+                    }
+                    elseif($valueBeverage == "Pepsi" && $quantity==1){
+                        $pepsi = 15 * $quantity + 5 * $quantity;
+                        $qtyPepsi = $quantity;
+                        echo '<li> ',$quantity,' ','piece of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$pepsi,'</li> <br>';
+                    }
+                    elseif($valueBeverage == "MountainDew" && $quantity==1){
+                        $mountaindew = 20 * $quantity + 5 * $quantity;
+                        $qtyMountaindew = $quantity;
+                        echo '<li> ',$quantity,' ','piece of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$mountaindew,'</li> <br>';
+                    }  
                 }
 
                 //Computation for Jumbo Size
                 elseif ($SizeValue == "Jumbo"){
-                    if($valueBeverage == "Coke" && $quantity > 1 || $valueBeverage == "Coke" && $quantity==1){
+
+                    //Pieces
+                    if($valueBeverage == "Coke" && $quantity > 1 ){
                         $coke = 15 * $quantity + 10 * $quantity;
                         $qtyCoke = $quantity;
                         echo '<li> ',$quantity,' ','pieces of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$coke,'</li> <br>';
                     }
                     
-                    elseif($valueBeverage == "Sprite" && $quantity > 1 || $valueBeverage == "Sprite" && $quantity==1){
+                    elseif($valueBeverage == "Sprite" && $quantity > 1){
                         $sprite = 20 * $quantity + 10 * $quantity;
                         $qtySprite = $quantity;
                         echo '<li> ',$quantity,' ','pieces of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$sprite,'</li> <br>';
                     }
 
-                    elseif($valueBeverage == "Royal" && $quantity > 1 || $valueBeverage == "Royal" && $quantity==1){
+                    elseif($valueBeverage == "Royal" && $quantity > 1){
                         $royal = 20 * $quantity + 10 * $quantity;
                         $qtyRoyal = $quantity;
                         echo '<li> ',$quantity,' ','pieces of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$royal,'</li> <br>';
                     }
                      
-                    elseif($valueBeverage == "Pepsi" && $quantity > 1 || $valueBeverage == "Pepsi" && $quantity==1){
+                    elseif($valueBeverage == "Pepsi" && $quantity > 1){
                         $pepsi = 15 * $quantity + 10 * $quantity;
                         $qtyPepsi = $quantity;
                         echo '<li> ',$quantity,' ','pieces of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$pepsi,'</li> <br>';
                     }
                    
-                    elseif($valueBeverage == "MountainDew" && $quantity > 1 || $valueBeverage == "MountainDew" && $quantity==1){
+                    elseif($valueBeverage == "MountainDew" && $quantity > 1){
                         $mountaindew = 20 * $quantity + 10 * $quantity;
                         $qtyMountaindew = $quantity;
                         echo '<li> ',$quantity,' ','pieces of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$mountaindew,'</li> <br>';
                     }  
                     
-                    
-
+                    //Piece
+                    elseif($valueBeverage == "Coke" && $quantity==1){
+                        $coke = 15 * $quantity + 10 * $quantity;
+                        $qtyCoke = $quantity;
+                        echo '<li> ',$quantity,' ','piece of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$coke,'</li> <br>';
+                    }
+                    elseif($valueBeverage == "Sprite" && $quantity==1){
+                        $sprite = 20 * $quantity + 10 * $quantity;
+                        $qtySprite = $quantity;
+                        echo '<li> ',$quantity,' ','piece of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$sprite,'</li> <br>';
+                    }
+                    elseif($valueBeverage == "Royal" && $quantity==1){
+                        $royal = 20 * $quantity + 10 * $quantity;
+                        $qtyRoyal = $quantity;
+                        echo '<li> ',$quantity,' ','piece of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$royal,'</li> <br>';
+                    }
+                    elseif($valueBeverage == "Pepsi" && $quantity==1){
+                        $pepsi = 15 * $quantity + 10 * $quantity;
+                        $qtyPepsi = $quantity;
+                        echo '<li> ',$quantity,' ','piece of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$pepsi,'</li> <br>';
+                    }
+                    elseif($valueBeverage == "MountainDew" && $quantity==1){
+                        $mountaindew = 20 * $quantity + 10 * $quantity;
+                        $qtyMountaindew = $quantity;
+                        echo '<li> ',$quantity,' ','piece of ',$SizeValue,' ',$valueBeverage,' amounting to ',' ₱ ',$mountaindew,'</li> <br>';
+                    } 
                 }
-
             }  
         }
-    
-        
             //Total Item And Amount
             $totalItem = $qtyCoke + $qtySprite + $qtyRoyal + $qtyPepsi +  $qtyMountaindew;
             $totalAmount = $coke + $sprite + $royal + $pepsi + $mountaindew;
             echo '<b>Total Number of Items: </b>',$totalItem,'<br>';
-            echo '<b>Total Amount: </b>',$totalAmount,'<br>';
-          
+            echo '<b>Total Amount: </b>',$totalAmount,'<br>';   
     }
-    
-
-
-
-                    
-  
     ?>
-    
 </body>
-
 </html>
