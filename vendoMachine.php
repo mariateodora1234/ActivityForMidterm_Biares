@@ -44,6 +44,7 @@
             echo '<b>No Selected Product, Try Again</b>';
         }
     }
+    error_reporting(0);
 
     if(isset($_GET['btnCheckout']) && isset($_GET['chkBeverage']) && isset($_GET['drpSize']) && isset($_GET['quantity'])){
 
